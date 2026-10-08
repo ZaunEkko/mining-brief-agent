@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "mining-news-mcp": {"command": "uv", "args": ["run", "mining-news-mcp"]},
+    "mineral-pdf-mcp": {"command": "uv", "args": ["run", "mineral-pdf-mcp"]},
+    "lme-price-mcp": {"command": "uv", "args": ["run", "lme-price-mcp"]}
+  }
+}

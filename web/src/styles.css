@@ -1,0 +1,157 @@
+/*
+ * Tokens. Palette from a core shed: cool paper, drill-mud ink, and three
+ * lithologies that colour the MCP servers (shale = news, sandstone = PDF,
+ * spodumene jade = price). Hematite is reserved for failures and abstentions.
+ */
+:root {
+  --paper: #eef1ec;
+  --surface: #f8f9f6;
+  --ink: #1b2320;
+  --ink-2: #4b5751;
+  --ink-3: #7b8781;
+  --rule: #cdd4cc;
+  --shale: #56698c;
+  --sand: #b48a2c;
+  --jade: #5f8a78;
+  --hematite: #b0432a;
+  --focus: #2f6fd1;
+
+  --font-display: 'Archivo Variable', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    'Noto Sans CJK SC', sans-serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif;
+  --font-data: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  --radius: 6px;
+  --gutter: clamp(16px, 3vw, 32px);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #121816;
+    --surface: #19201d;
+    --ink: #e2e8e3;
+    --ink-2: #a3aea8;
+    --ink-3: #75817b;
+    --rule: #2d3733;
+    --shale: #7f93b8;
+    --sand: #d1a84a;
+    --jade: #7fae9a;
+    --hematite: #e0694c;
+    --focus: #79a8ff;
+    color-scheme: dark;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 15px/1.6 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.eyebrow {
+  font: 600 11px/1 var(--font-data);
+  letter-spacing: 0.06em; /* wide tracking reads well for Latin caps, poorly for CJK */
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--rule);
+}
+
+.field {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 4px 10px;
+  border: 1px dashed var(--rule);
+  border-radius: 999px;
+  background: none;
+  color: var(--ink-2);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-style: solid;
+  color: var(--ink);
+}
+
+.error-box {
+  padding: 12px 14px;
+  border-left: 3px solid var(--hematite);
+  background: color-mix(in srgb, var(--hematite) 8%, var(--surface));
+}
+
+.server-news {
+  --lith: var(--shale);
+}
+.server-pdf {
+  --lith: var(--sand);
+}
+.server-price {
+  --lith: var(--jade);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

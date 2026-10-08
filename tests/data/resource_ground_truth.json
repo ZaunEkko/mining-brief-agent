@@ -1,0 +1,95 @@
+{
+  "_comment": "Hand-transcribed from the source PDFs (page = 1-based page of the primary table). Tests allow +/-5% per field.",
+  "reports": [
+    {
+      "id": "pilgangoora-2025",
+      "url": "https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-02955435-6A1268075",
+      "fixture": true,
+      "reporting_code": "JORC",
+      "page": 2,
+      "commodity": "Li2O",
+      "headline_section": "Pilgangoora",
+      "rows": {
+        "Measured": {"tonnage_mt": 20, "grade": 1.32, "contained_t": 300000},
+        "Indicated": {"tonnage_mt": 356, "grade": 1.29, "contained_t": 4600000},
+        "Inferred": {"tonnage_mt": 70, "grade": 1.25, "contained_t": 900000},
+        "Total": {"tonnage_mt": 446, "grade": 1.28, "contained_t": 5700000}
+      }
+    },
+    {
+      "id": "pilgangoora-2023",
+      "url": "https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-02694735-6A1162199",
+      "fixture": false,
+      "reporting_code": "JORC",
+      "page": 2,
+      "commodity": "Li2O",
+      "headline_section": null,
+      "rows": {
+        "Measured": {"tonnage_mt": 22.1, "grade": 1.34, "contained_t": 300000},
+        "Indicated": {"tonnage_mt": 315.2, "grade": 1.15, "contained_t": 3600000},
+        "Inferred": {"tonnage_mt": 76.6, "grade": 1.07, "contained_t": 800000},
+        "Total": {"tonnage_mt": 413.8, "grade": 1.15, "contained_t": 4800000}
+      }
+    },
+    {
+      "id": "colina-2025",
+      "url": "https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-02982536-6A1279763",
+      "fixture": false,
+      "reporting_code": "JORC",
+      "page": 1,
+      "commodity": "Li2O",
+      "headline_section": "Colina Deposit",
+      "rows": {
+        "Measured": {"tonnage_mt": 28.64, "grade": 1.31, "contained_t": 375200},
+        "Indicated": {"tonnage_mt": 38.63, "grade": 1.23, "contained_t": 475100},
+        "Inferred": {"tonnage_mt": 3.59, "grade": 1.10, "contained_t": 39500},
+        "Subtotal": {"tonnage_mt": 70.89, "grade": 1.25, "contained_t": 889800}
+      }
+    },
+    {
+      "id": "jamesbay-allkem-2023-ni43101",
+      "url": "https://www.costmine.com/wp-content/uploads/2023/11/James-Bay-Lithium.pdf",
+      "fixture": false,
+      "reporting_code": "NI 43-101",
+      "page": 21,
+      "commodity": "Li2O",
+      "headline_section": "Inclusive of Mineral Reserves",
+      "confidence": "high",
+      "rows": {
+        "Indicated": {"tonnage_mt": 54.3, "grade": 1.30, "contained_t": 706000},
+        "Measured & Indicated": {"tonnage_mt": 54.3, "grade": 1.30, "contained_t": 706000},
+        "Inferred": {"tonnage_mt": 55.9, "grade": 1.29, "contained_t": 724000}
+      }
+    },
+    {
+      "id": "quebec-lithium-2011-ni43101",
+      "url": "https://gq.mines.gouv.qc.ca/documents/examine/GM67906/GM67906.pdf",
+      "fixture": false,
+      "reporting_code": "NI 43-101",
+      "page": 6,
+      "commodity": "Li2O",
+      "headline_section": null,
+      "confidence": "high",
+      "rows": {
+        "Measured": {"tonnage_mt": 6.10, "grade": 1.16},
+        "Indicated": {"tonnage_mt": 23.19, "grade": 1.20},
+        "Measured & Indicated": {"tonnage_mt": 29.30, "grade": 1.19},
+        "Inferred": {"tonnage_mt": 20.94, "grade": 1.15}
+      }
+    },
+    {
+      "id": "jamesbay-rio-2022-ni43101",
+      "url": "https://cdn-rio.dataweavers.io/can/-/media/content/documents/operations/ar-lithium/jb-technical-report-eng-2022.pdf?rev=-1",
+      "fixture": false,
+      "reporting_code": "NI 43-101",
+      "page": 34,
+      "commodity": "Li2O",
+      "headline_section": null,
+      "confidence": "medium",
+      "_note": "Indicated-only statement with no contained-metal column: nothing to reconcile, so medium.",
+      "rows": {
+        "Indicated": {"tonnage_mt": 40.33, "grade": 1.40}
+      }
+    }
+  ]
+}

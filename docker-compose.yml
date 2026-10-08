@@ -1,0 +1,74 @@
+# Web UI (servers + UI on http://localhost:8080):
+#   docker compose up -d --build web
+# CLI, one command (builds, starts the servers, prints and saves a brief to ./out/):
+#   docker compose run --rm --build agent
+# Servers stay up for MCP clients on localhost:8001-8003; `docker compose down` stops all.
+
+x-app: &app
+  build: .
+  image: mining-brief-agent:local
+  environment: &env
+    MB_OFFLINE: ${MB_OFFLINE:-0}
+  volumes:
+    - cache:/data
+
+x-health: &health
+  interval: 5s
+  timeout: 3s
+  retries: 12
+
+services:
+  news:
+    <<: *app
+    command: ["mining-news-mcp", "--transport", "http", "--host", "0.0.0.0", "--port", "8001"]
+    ports: ["127.0.0.1:8001:8001"]
+    healthcheck:
+      <<: *health
+      test: ["CMD", "python", "-c", "import socket; socket.create_connection(('localhost', 8001), 2)"]
+
+  pdf:
+    <<: *app
+    command: ["mineral-pdf-mcp", "--transport", "http", "--host", "0.0.0.0", "--port", "8002"]
+    ports: ["127.0.0.1:8002:8002"]
+    healthcheck:
+      <<: *health
+      test: ["CMD", "python", "-c", "import socket; socket.create_connection(('localhost', 8002), 2)"]
+
+  price:
+    <<: *app
+    command: ["lme-price-mcp", "--transport", "http", "--host", "0.0.0.0", "--port", "8003"]
+    ports: ["127.0.0.1:8003:8003"]
+    healthcheck:
+      <<: *health
+      test: ["CMD", "python", "-c", "import socket; socket.create_connection(('localhost', 8003), 2)"]
+
+  web:
+    <<: *app
+    command: ["mining-brief-web", "--host", "0.0.0.0", "--port", "8080"]
+    ports: ["127.0.0.1:8080:8080"]
+    environment: &agent-env
+      <<: *env
+      MB_NEWS_URL: http://news:8001/mcp
+      MB_PDF_URL: http://pdf:8002/mcp
+      MB_PRICE_URL: http://price:8003/mcp
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      MB_LLM_PROVIDER: ${MB_LLM_PROVIDER:-auto}
+      MB_OPENAI_BASE_URL: ${MB_OPENAI_BASE_URL:-}
+      MB_OPENAI_API_KEY: ${MB_OPENAI_API_KEY:-}
+      MB_OPENAI_MODEL: ${MB_OPENAI_MODEL:-}
+    depends_on: &servers-healthy
+      news: {condition: service_healthy}
+      pdf: {condition: service_healthy}
+      price: {condition: service_healthy}
+
+  agent:
+    <<: *app
+    profiles: ["cli"]
+    command: ["mining-brief", "--out", "/out"]
+    environment: *agent-env
+    volumes:
+      - ./out:/out
+    depends_on: *servers-healthy
+
+volumes:
+  cache:

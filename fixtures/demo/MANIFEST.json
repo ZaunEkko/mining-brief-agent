@@ -1,0 +1,98 @@
+{
+  "_comment": "SYNTHETIC offline dataset; regenerate with scripts/make_demo_fixtures.py",
+  "0f511e9738ccce4c58be22efeb1008fd809f26a74f11364abc3a96ceeb32949b": {
+    "url": "https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Pb_cash",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "1499910da7547d5d9ef3a921b9da67c5e227864f1b064f255dc96f9eaed0e516": {
+    "url": "https://example.com/mining-brief-demo/pls-group-quarterly-report-preview--sample/",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "2fd4e6ac87bb1d6ede96478e8e2633a80d900db96df906f3b7463d9cab723736": {
+    "url": "https://example.com/mining-brief-demo/lithium-project-financing-explainer--sample/",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "3f1de5891f904021572410a85b6f17eac13f1e0c768e0adf8ba14f89369102e2": {
+    "url": "https://example.com/mining-brief-demo/battery-metals-week-in-review--sample/",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "4b5ad02184ccd7fb3a0ac85cb93b023a35b3df1b3f884495f1af213a43f72416": {
+    "url": "https://www.mining.com/commodity/lithium/feed/",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "71aac58598b4d8ef5c787df27a3c257108bca103a20dae01874372bf740f638e": {
+    "url": "https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Ni_cash",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "77e57fa67e0d42b45d570fac778721a6e8b5021b22af41bf4a5084fa94ce3900": {
+    "url": "https://example.com/mining-brief-demo/pls-lithium-operations-update--sample/",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "785391d614b9cc8054d456c9decf13d16d19aecc311882171f4093056278b0c4": {
+    "url": "https://stock2.finance.sina.com.cn/futures/api/jsonp.php/var%20_LC0=/InnerFuturesNewService.getDailyKLine?symbol=LC0",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "7ecf31cae5cfbef9a64327a43cd75309d62a7cc3dbb4f1bfd9af0d34372a7ea2": {
+    "url": "https://example.com/mining-brief-demo/pilgangoora-expansion-timeline-explained--sample/",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "88363e75b8a74e466a747ea28236181f0a45bcc0f9ec555bc50a1f486b9a503e": {
+    "url": "https://news.google.com/rss/search?q=PLS%20lithium%20when:7d&hl=en-US&gl=US&ceid=US:en",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "96ba7820fc32b95bed3af9034fcf6cd6946744d050c9e86d6bb31b2783036053": {
+    "url": "https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "a7428ddd057b55450e8fc5f1412179b7fc08d64c9c764caea8713fe1e651e288": {
+    "url": "https://example.com/mining-brief-demo/spodumene-concentrate-shipments-overview--sample/",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "a8f792955fd3caf839cbe023ca6a32dc20b2daf7a4fd800b4168c7b10291df61": {
+    "url": "https://example.com/mining-brief-demo/lithium-carbonate-futures-in-focus--sample/",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "a91d94eec3881765567763fb380383a3e0e0321070835ede40bc134bda2d0ae0": {
+    "url": "https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Cu_cash",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "b004f5fff286cfc94a1d50373fb7b180347bb72a883ff4ac3e99037980967880": {
+    "url": "https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Sn_cash",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "b14f818cdd0a03bc66d7eae8c7a6a64dbdd882758e9919253694b45c7712691c": {
+    "url": "https://www.mining.com/?s=PLS+lithium&feed=rss2",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "c020a923940f1bf2d9b2af60146876503d764ecada1e27dd16e17d080f4ee868": {
+    "url": "https://www.mining.com/feed/",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "d5461a6c253236944ff18782825efc7d68b827134225282743bc65da3c62b5ea": {
+    "url": "https://cdn-api.markitdigital.com/apiman-gateway/ASX/asx-research/1.0/file/2924-02955435-6A1268075",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  },
+  "f594a5caa243348f73e88c58c1144bdb72d5bf6b4a5b134c5cf28061da478cf1": {
+    "url": "https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Zn_cash",
+    "recorded_at": "2026-10-08T10:00:00+00:00",
+    "synthetic": true
+  }
+}

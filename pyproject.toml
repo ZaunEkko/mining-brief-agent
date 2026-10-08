@@ -1,0 +1,82 @@
+[project]
+name = "mining-brief-agent"
+version = "0.2.4"
+description = "MCP-based mining daily brief agent: news, NI 43-101/JORC resources and metal prices composed into a cited Markdown brief."
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+license = "LicenseRef-Proprietary"
+license-files = ["LICENSE", "NOTICE"]
+dependencies = [
+    "mcp>=2.3,<3",
+    "httpx>=0.28,<1",
+    "pydantic>=2.13,<3",
+    "pydantic-settings>=2.15,<3",
+    "feedparser>=6.0.14,<7",
+    "trafilatura>=2.3,<3",
+    "pdfplumber>=0.11.10,<0.12",
+    "anthropic>=1.12,<2",
+    "lxml>=5",
+    "tzdata>=2024.1",
+    "starlette>=1.7",
+    "uvicorn>=0.54",
+]
+
+[project.scripts]
+mining-news-mcp = "mining_brief.servers.news.server:main"
+mineral-pdf-mcp = "mining_brief.servers.pdf.server:main"
+lme-price-mcp = "mining_brief.servers.price.server:main"
+mining-brief = "mining_brief.agent.cli:main"
+mining-brief-web = "mining_brief.web.app:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1,<10",
+    "anyio>=4",
+    "respx>=0.22",
+    "ruff>=0.16,<0.17",
+    "mypy>=2.4,<3",
+    "pre-commit>=4",
+    "reportlab>=4",
+]
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mining_brief"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.format]
+line-ending = "lf"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "RUF", "ASYNC", "S", "PT", "TID"]
+# E501: line length is owned by the formatter; long CJK literals are left intact.
+ignore = ["E501", "RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "S106"]
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+mypy_path = "src"
+packages = ["mining_brief"]
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["feedparser.*", "trafilatura.*", "pdfplumber.*", "lxml.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers -m 'not live'"
+markers = ["live: hits real upstream sites; excluded by default (run with -m live)"]

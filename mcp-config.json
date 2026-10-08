@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "mining-news": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-v", "mining-brief-agent_cache:/data", "mining-brief-agent:local", "mining-news-mcp"]
+    },
+    "mineral-pdf": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-v", "mining-brief-agent_cache:/data", "mining-brief-agent:local", "mineral-pdf-mcp"]
+    },
+    "lme-price": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-v", "mining-brief-agent_cache:/data", "mining-brief-agent:local", "lme-price-mcp"]
+    }
+  }
+}
